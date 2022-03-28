@@ -1,0 +1,369 @@
+.filter {
+    box-sizing: border-box;
+    max-width: 360px;
+    background-color: $lightGrey;
+    padding: 40px 40px 40px 80px;
+    border-right: 1px solid #F0F0F0;
+
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+        text-transform: uppercase;
+        color: #212121;
+        margin-bottom: 30px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    &__fieldset {
+        border: none;
+        border-bottom: 1px solid #E2E2E2;
+        padding: 0;
+        padding-top: 15px;
+        margin: 0;
+    }
+
+    &__drop-trigger {
+        @include desc;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 15px;
+        text-align: start;
+        border: none;
+        background-color: transparent;
+        @include transition;
+
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            background-color: $black;
+            width: 16px;
+            height: 2px;
+        }
+
+        &::before {
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            transform: translateY(-50%) rotate(90deg);
+            @include transition;
+        }
+
+        &.active {
+
+            &::after {
+                transform: translateY(-50%) rotate(0);
+                @include transition;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            color: $red;
+            @include transition;
+
+            &::before,
+            &::after {
+                background-color: $red;
+                @include transition;
+            }
+        }
+    }
+
+    .drop-list {
+        max-height: 0;
+        overflow: hidden;
+        @include transition;
+    }
+
+    &__field-wrapper {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    [type="checkbox"] + label {
+        position: relative;
+        padding: 0 3px 0 26px;
+        @include desc14;
+        @include transition;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-color: $white;
+            border: 1px solid $black;
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            width: 8px;
+            height: 4px;
+            border-top: 2px solid $white;
+            border-right: 2px solid $white;
+            transform: translateY(-60%) rotate(135deg);
+            display: none;
+        }
+    }
+
+    [type="checkbox"]:checked + label {
+        color: $red;
+
+        &::before {
+            background-color: $red;
+            border-color: $red;
+        }
+
+        &::after {
+            display: block;
+        }
+    }
+
+    &__sub {
+        font-size: 11px;
+        line-height: 16px;
+        color: #212121;
+        bottom: 0;
+    }
+
+    &__price-range {
+        padding: 20px 0 30px;
+        border-bottom: 1px solid #E2E2E2;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    &__price-title {
+        @include desc;
+        margin-bottom: 10px;
+    }
+
+    &__range {
+        margin-bottom: 40px;
+    }
+
+    &__range-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__range-field {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+
+        label {
+            @include desc;
+            color: $darkGrey;
+            margin-right: 10px;
+        }
+
+        input {
+            box-sizing: border-box;
+            max-width: 70px;
+            width: 100%;
+            min-width: 50px;
+
+            height: 40px;
+            background-color: $white;
+            border: 1px solid #E2E2E2;
+            padding: 10px;
+            @include transition;
+
+            &:focus,
+            &:hover {
+                border-color: $black;
+                @include transition;
+            }
+        }
+    }
+
+    &__clearAll {
+        border: none;
+        background-color: transparent;
+        @include desc;
+        padding-left: 31px;
+        position: relative;
+        margin-top: 50px;
+
+        @include transition;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 20px;
+            height: 2px;
+            background-color: $black;
+        }
+
+        &::before {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        &:hover,
+        &:focus {
+            color: $red;
+            @include transition;
+
+            &::before,
+            &::after {
+                background-color: $red;
+                @include transition;
+            }
+        }
+    }
+
+    &__count-checked {
+        display: none;
+    }
+}
+
+.filter .filter__form {
+    max-height: none;
+}
+
+@media (max-width: 1200px) {
+    .filter {
+        padding: 0 20px;
+        position: relative;
+        max-width: none;
+        display: flex;
+        justify-content: center;
+
+        &__title {
+            width: 100%;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 18px;
+            margin: 0;
+            text-transform: capitalize;
+            padding-right: 20px;
+            background-color: #f8f8f8;
+
+            position: relative;
+
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 9px;
+                width: 7px;
+                height: 7px;
+                border-top: 2px solid $black;
+                border-right: 2px solid $black;
+                transform: translateY(-50%) rotate(135deg);
+                @include transition;
+            }
+
+            &.active {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 2;
+                padding: 0 20px;
+                
+                &::before {
+                    transform: rotate(-45deg);
+                    @include transition;
+                }
+            }
+        }
+
+        &__form {
+            max-height: 0;
+            overflow: hidden;
+            @include transition;
+            position: absolute;
+            top: 51px;
+            left: 0;
+            right: 0;
+            background-color: #f7f7f7;
+            z-index: 21;
+        }
+
+        &__drop-trigger {
+            padding: 0 20px;
+        }
+
+        &__drop-list {
+            background-color: #fff;
+        }
+
+        &__field-wrapper {
+            margin-bottom: 10px;
+        }
+
+        &__clearAll {
+            margin: 50px 20px;
+        }
+
+        &__range-wrap {
+            justify-content: flex-start;
+        }
+
+        &__drop-trigger::before,
+        &__drop-trigger::after {
+            right: 20px;
+        }
+
+        &__drop-list {
+            padding: 20px;
+
+            .filter__field-wrapper:last-of-type {
+                margin: 0;
+            }
+        }
+
+        &__price-range {
+            padding: 20px;
+        }
+
+        &__count-checked {
+            font-size: 10px;
+            line-height: 16px;
+            color: #FFFFFF;
+
+            padding: 1px 5px 0;
+            border-radius: 50%;
+            background-color: $red;
+            min-width: 16px;
+            min-height: 16px;
+            margin-left: 10px;
+        }
+    }
+
+    .filter .filter__form {
+        max-height: 0;
+    }
+}

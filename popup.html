@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="src/libs/swiper-bundle.min.css">
+    <link rel="stylesheet" href="src/style/style.css">
+    <title>SITIS</title>
+</head>
+<body>
+
+    <main class="main">
+        <section class="popup">
+            <div class="popup__overlay close-popup"></div>
+            <div class="popup__content">
+                <button class="popup__close-btn close-popup"></button>
+                <div class="popup__image">
+                    <div class="popup__slider mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="popup__slide swiper-slide" style="background: #EDEFE8;">
+                                <div class="popup__img-wrap">
+                                    <img src="src/img/popup/popup-img.png" alt="" width="457" height="303">
+                                </div>
+                            </div>
+                            <div class="popup__slide swiper-slide" style="background: #EDF2F2;">
+                                <div class="popup__img-wrap">
+                                    <img src="src/img/popup/popup-img.png" alt="" width="457" height="303">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup__button-prev swiper-button-prev"></div>
+                        <div class="popup__button-next swiper-button-next"></div>
+                    </div>
+                    <article class="labels">
+                        <div class="labels__label labels__label--discount" style="display: none;"> 
+                            <output>20</output>%
+                        </div>
+                        <div class="labels__label labels__label--stock">
+                            <output>Черная пятница</output>
+                        </div>
+                        <div class="labels__label labels__label--bestseller" style="display: none;">
+                            <output>Хит</output>
+                        </div>
+                        <div class="labels__label labels__label--novelti">
+                            <output>Новинка</output>
+                        </div>
+                    </article>
+                    <ul class="popup__account">
+                        <li class="popup__acc-item">
+                            <a class="popup__acc-link popup__acc-link--compare" href="#">
+                                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="red" d="M1 20H21" stroke="#AAAAAA" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="red" d="M8.75 2V20H13.25V2C13.25 0.9 12.8 0 11.45 0H10.55C9.2 0 8.75 0.9 8.75 2Z" fill="#AAAAAA"></path>
+                                    <path class="red" d="M2 8V20H6V8C6 6.9 5.6 6 4.4 6H3.6C2.4 6 2 6.9 2 8Z" fill="#AAAAAA"></path>
+                                    <path class="red" d="M16 13V20H20V13C20 11.9 19.6 11 18.4 11H17.6C16.4 11 16 11.9 16 13Z" fill="#AAAAAA"></path>
+                                </svg>
+                            </a>
+                            <span>Сравнение</span>
+                        </li>
+                        <li class="popup__acc-item">
+                            <a class="popup__acc-link popup__acc-link--favorite" href="#">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="red" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#aaaaaa"></path>
+                                    <path d="M10.3306 15.4496C10.1506 15.5096 9.84061 15.5096 9.66061 15.4496C8.10061 14.9196 4.60059 12.6896 4.60059 8.90964C4.60059 7.23964 5.94059 5.88965 7.60059 5.88965C8.58061 5.88965 9.45061 6.35965 10.0006 7.09965C10.5406 6.36965 11.4206 5.88965 12.4006 5.88965C14.0606 5.88965 15.4006 7.23964 15.4006 8.90964C15.4006 12.6896 11.9006 14.9196 10.3306 15.4496Z" fill="white"></path>
+                                </svg>
+                            </a>
+                            <span>Избранное</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="popup__info">
+                    <div class="popu__info-wrap">
+                        <div class="popup__type">
+                            Беговел
+                        </div>
+                        <h2 class="popup__title">SITIS HOLLY 16"</h2>
+                        <div class="popup__price-wrap">
+                            <div class="popup__price">
+                                <output>9 370</output>
+                                &nbsp;
+                                <span>р</span>
+                            </div>
+                            <div class="popup__price-old">
+                                <output>10 370</output>
+                                <span>р</span>
+                            </div>
+                        </div>
+                        <div class="popup__color-sec">
+                            <div class="popup__color-val">
+                                <span>Цвет:</span>
+                                <output>Красный</output>
+                            </div>
+                            <div class="popup__color-wrap">
+                                <label class="popup__color-container">
+                                    <input type="radio" class="visually-hidden" name="color" checked>
+                                    <div class="popup__color-wrap">
+                                        <div class="popup__color">
+                                            <span style="background-color: #e8431d"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="popup__color-container">
+                                    <input type="radio" class="visually-hidden" name="color">
+                                    <div class="popup__color-wrap">
+                                        <div class="popup__color">
+                                            <span style="background-color: #0154CA"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="popup__color-container">
+                                    <input type="radio" class="visually-hidden" name="color">
+                                    <div class="popup__color-wrap">
+                                        <div class="popup__color">
+                                            <span style="background-color: #5901CA"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="popup__table">
+                            <div class="popup__row">
+                                <div class="popup__info-title">
+                                    Город выпуска:
+                                </div>
+                                <div class="popup__value">
+                                    2021
+                                </div>
+                            </div>
+                            <div class="popup__row">
+                                <div class="popup__info-title">
+                                    Материал рамы:
+                                </div>
+                                <div class="popup__value">
+                                    Алюминий
+                                </div>
+                            </div>
+                            <div class="popup__row">
+                                <div class="popup__info-title">
+                                    Размер колёс:
+                                </div>
+                                <div class="popup__value">
+                                    12”
+                                </div>
+                            </div>
+                            <div class="popup__row">
+                                <div class="popup__info-title">
+                                    Материал обода:
+                                </div>
+                                <div class="popup__value">
+                                    Пластик
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="popup__btn" href="#">
+                        Подробнее
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="src/libs/swiper-bundle.min.js"></script>
+    <script src="src/js/script.js"></script>
+    <script>
+        var popupSlider = new Swiper(".popup__slider", {
+            navigation: {
+                nextEl: ".popup__button-next",
+                prevEl: ".popup__button-prev",
+            },
+        });
+
+         function toggleActiveAccIcons (item) {
+            event.preventDefault();
+            item.classList.toggle('active');
+        }
+
+        const accIcons = document.querySelectorAll('.popup__acc-link');
+        accIcons.forEach((el) => {
+            el.addEventListener('click', () => toggleActiveAccIcons(el));
+        })
+       
+    </script>
+</body>
+</html>

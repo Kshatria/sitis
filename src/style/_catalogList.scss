@@ -1,0 +1,306 @@
+.catalogList {
+    padding: 50px 80px;
+    width: 100%;
+
+    &__top-control {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    &__filter {
+        display: flex;
+        align-items: center;
+    }
+
+    &__items-count {
+        @include desc;
+        color: $darkGrey;
+    }
+
+    &__count-choose {
+        display: flex;
+        align-items: center;
+        margin-right: 50px;
+
+        label {
+            margin-right: 18px;
+            @include desc;
+            color: $darkGrey;
+        }
+
+        select {
+            width: 80px;
+            height: 50px;
+            @include desc;
+        }
+    }
+
+    &__sort {
+        display: flex;
+        align-items: center;
+
+        label {
+            margin-right: 18px;
+            @include desc;
+            color: $darkGrey;
+        }
+
+        select {
+            width: 240px;
+            height: 50px;
+            @include desc;
+        }
+
+        &--mobile {
+            display: none;
+        }
+    }
+
+    &__bottom-control {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__show-more {
+        @include btnWhite;
+        border: 1px solid $black;
+        width: 100%;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    &__pages {
+        display: flex;
+        align-items: center;
+    }
+
+    &__page {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border: 1px solid #e2e2e2;
+        border-left: none;
+
+        @include center;
+        @include transition;
+
+        &:hover,
+        &:focus {
+            background-color: #e2e2e2;
+            @include transition;
+        }
+    }
+
+    &__page--prev {
+        border-left: 1px solid #e2e2e2;
+        background-color: #e2e2e2;
+
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 7px;
+            height: 7px;
+            border-top: 1px solid $black;
+            border-right: 1px solid $black;
+            transform: translate(-30%, -50%) rotate(-135deg);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #ffffff;
+            @include transition;
+        }
+    }
+
+    &__page--next {
+        background-color: #e2e2e2;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 7px;
+            height: 7px;
+            border-top: 1px solid $black;
+            border-right: 1px solid $black;
+            transform: translate(-70%, -50%) rotate(45deg);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #ffffff;
+            @include transition;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .card {
+            margin-bottom: 45px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .catalogList {
+        padding: 50px 20px;
+
+        &__count-choose {
+            display: none;
+        }
+
+        &__sort {
+            width: 100%;
+            margin: 0;
+
+            &--desktop {
+                display: none;
+            }
+
+            &--mobile {
+                display: block;
+
+                select {
+                    width: 100%;
+                    border: none;
+                    background-color: transparent;
+                }
+            }
+        }
+
+        &__sort-title {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            height: 50px;
+            position: relative;
+            background-color: #f8f8f8;
+            z-index: 1;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 9px;
+                width: 7px;
+                height: 7px;
+                border-top: 2px solid #212121;
+                border-right: 2px solid #212121;
+                transform: translateY(-50%) rotate(135deg);
+                @include transition;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: 100%;
+                background-color: $white;
+            }
+
+            &.active {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                padding: 0 20px;
+
+                &::before {
+                    transform: rotate(-45deg);
+                    @include transition;
+                }
+            }
+        }
+
+        &__sort-drop-list {
+            max-height: 0;
+            overflow: hidden;
+            @include transition;
+
+            position: absolute;
+            top: 51px;
+            left: 0;
+            right: 0;
+            background-color: #f7f7f7;
+            z-index: 21;
+        }
+
+        &__sort-field {
+            label {
+                display: block;
+                width: 100%;
+                padding: 13px 20px;
+                border-bottom: 1px solid #E2E2E2;
+                color: $black;
+                @include desc;
+                position: relative;
+                cursor: pointer;
+
+                &:hover,
+                &:focus {
+                    background-color: $white;
+                    @include transition;
+                }
+
+                &::before {
+                    display: none;
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    transform: translateY(-50%);
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    background-color: $red;
+                    z-index: 1;
+                }
+
+                &::after {
+                    display: none;
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 25px;
+                    transform: translateY(-70%) rotate(135deg);
+                    width: 11px;
+                    height: 5px;
+                    border-top: 2px solid $white;
+                    border-right: 2px solid $white;
+                    z-index: 2;
+                }
+            }
+
+            input[type="radio"] {
+                &:checked + label {
+                    background-color: $white;
+
+                    &::before,
+                    &::after {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &__pages {
+            display: none;
+        }
+    }
+}

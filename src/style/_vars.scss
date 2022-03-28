@@ -1,0 +1,142 @@
+$grey: #E2E2E2;
+$lightBlue: #ECF1F1;
+$lightPurple: #EEEEF0;
+$lightGreen: #EDEFE8;
+$black: #212121;
+$darkGrey: #aaaaaa;
+$lightGrey: #f8f8f8;
+$red: #E8431D;
+$white: #ffffff;
+$shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+
+:root {
+    --swiper-theme-color: #212121;
+    --swiper-navigation-color: #212121;
+}
+
+@mixin transition {
+    -webkit-transition: all ease-out .3s;
+    -o-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+}
+
+@mixin desc {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+@mixin desc14 {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+@mixin small {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+@mixin title54 {
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 52px;
+}
+
+@mixin title28 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+@mixin title48 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+@mixin title32 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin btnRed {
+    background: $red;
+    border-radius: 100px;
+    color: $white;
+    @include transition;
+    @include center;
+    max-width: 200px;
+    height: 60px;
+    @include desc14;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.02);
+        box-shadow: $shadow;
+        @include transition;
+    }
+
+    &:active {
+        @include transition;
+        transform: scale(.98);
+        opacity: .5;
+    }
+}
+
+@mixin btnWhite {
+    background: $white;
+    border-radius: 100px;
+    color: $black;
+    @include transition;
+    @include center;
+    max-width: 130px;
+    height: 40px;
+    @include small;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.01);
+        box-shadow: $shadow;
+        @include transition;
+    }
+
+    &:active {
+        opacity: .5;
+    }
+}
+
+@mixin hoverUnderline {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $black;
+        transform:  scaleX(0);
+        -webkit-transition: all ease-out .3s;
+        -o-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+    }
+
+    &:hover::after,
+    &:focus::after {
+        transform:  scaleX(1);
+        -webkit-transition: all ease-out .3s;
+        -o-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+    }
+}

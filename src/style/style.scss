@@ -1,0 +1,45 @@
+/* base style */
+@import "_normalize.scss";
+@import "_fonts.scss";
+@import "_vars.scss";
+@import "_base.scss";
+@import "_header.scss";
+@import "_main.scss";
+@import "_footer.scss";
+/* END base style */
+/* main page */
+@import "_mainSlider.scss";
+@import "_promo.scss";
+@import "_novelties.scss";
+@import "_card.scss";
+@import "_labels.scss";
+@import "_popular.scss";
+@import "_bestsellers.scss";
+@import "_wellknown.scss";
+@import "_social.scss";
+@import "_gallery.scss";
+/* END main page */
+/* catalog */
+@import "_breadcrumbs.scss";
+@import "_catalogPromo.scss";
+@import "_model.scss";
+@import "_catalog.scss";
+@import "_filter.scss";
+@import "_catalogList.scss";
+/* END catalog */
+/* card of item page */
+@import "_cardPage.scss";
+@import "_product.scss";
+/* END card of item page */
+/* about us page */
+@import "_infoPage.scss";
+@import "_brend.scss";
+@import "_equip.scss";
+@import "_info.scss";
+/* END about us page */
+/* coop page */
+@import "_coop.scss";
+/* END coop page */
+/* popup */
+@import "_popup.scss";
+/* END popup */

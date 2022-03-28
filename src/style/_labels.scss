@@ -1,0 +1,89 @@
+.labels {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    z-index: 1;
+
+    &__label {
+        box-sizing: border-box;
+        height: 18px;
+        @include center;
+        padding: 0 9px;
+        @include small;
+        border-radius: 3px;
+        margin-right: 3px;
+        white-space: nowrap;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        &--discount {
+            background: #FFFFA0;
+            width: 32px;
+        }
+
+        &--stock {
+            color: $white;
+            background: #212121;
+        }
+
+        &--bestseller {
+            background: #AEF08F;
+            width: 30px;
+        }
+
+        &--novelti {
+            background: #FFAB99;
+            width: 68px;
+        }
+    }
+}
+
+.product .labels {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+
+    &__label {
+        padding: 0;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .labels {
+        flex-direction: column;
+        top: 10px;
+        left: 10px;
+    }
+
+    .product .labels {
+        flex-direction: row;
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        left: auto;
+        margin-bottom: 0;
+    
+        &__label {
+            padding: 0;
+            margin-right: 10px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .product .labels {
+        top: 0;
+        right: auto;
+        left: 0;
+    
+        &__label {
+            padding: 0;
+            margin-right: 10px;
+        }
+    }
+}

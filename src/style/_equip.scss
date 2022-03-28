@@ -1,0 +1,149 @@
+.equip {
+    padding: 0 80px;
+    margin-bottom: 60px;
+
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 60px;
+    }
+
+    &__slide {
+        border: 1px solid #E2E2E2;
+        width: 33.3%;
+        height: 321px;
+        border-right: none;
+        background-color: #fff;
+        padding: 35px 40px;
+
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        &:last-of-type {
+            border-right: 1px solid #e2e2e2;
+        }
+
+        background-repeat: no-repeat;
+        background-position: top 0 right 0;
+        background-size: auto;
+    }
+
+    &__item-title {
+        font-size: 28px;
+        line-height: 32px;
+        color: #212121;
+        max-width: 250px;
+        margin-bottom: 15px;
+    }
+
+    &__item-desc {
+        font-size: 16px;
+        line-height: 24px;
+        color: #212121;
+        max-width: 320px;
+    }
+
+    .swiper-horizontal > .swiper-scrollbar {
+        left: 0;
+        width: 90%;
+        height: 1px;
+        bottom: 15px;
+    }
+
+    .swiper-scrollbar-drag {
+        height: 4px;
+        margin-top: -2px;
+        background: rgba(0,0,0,1);
+    }
+
+    &__controls {
+        position: absolute;
+        bottom: 0;
+        right: 40px;
+    }
+    
+    --swiper-navigation-size: 15px;
+
+    &__button-prev,
+    &__button-next {
+        width: 30px;
+        height: 30px;
+        background: #E2E2E2;
+        top: auto!important;
+        bottom: 0!important;
+        @include transition;
+
+        &:hover,
+        &:focus {
+            transform: scale(1.05);
+            @include transition;
+        }
+
+        &:active {
+            @include transition;
+            transform: scale(0.99);
+            opacity: .5;
+        }
+    }
+
+    &__button-prev {
+        left: auto!important;
+        right: 3px!important;
+    }
+
+    &__button-next {
+        left: 3px!important;
+        right: auto!important;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .equip {
+        .equip__slide {
+            background-size: 50%;
+        }
+    } 
+}
+
+@media (max-width: 1200px) {
+    .equip {
+        &__slide {
+            width: 230px;
+            height: 180px;
+            padding: 15px;
+        }
+
+        &__item-title {
+            font-size: 20px;
+            line-height: 22px;
+            max-width: 150px;
+            margin-bottom: 5px;
+        }
+
+        &__item-desc {
+            font-size: 11px;
+            line-height: 16px;
+            max-width: 200px;
+        }
+
+        .swiper-horizontal > .swiper-scrollbar {
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .equip {
+        padding: 0 20px;
+
+        .swiper-horizontal > .swiper-scrollbar {
+            width: 70%;
+        }
+
+        &__slide {
+            background-size: 70%;
+        }
+    }
+}

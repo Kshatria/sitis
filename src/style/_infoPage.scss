@@ -1,0 +1,34 @@
+.infoPage {
+    &__main-slider {
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    --swiper-theme-color: #fff;
+    --swiper-navigation-color: #fff;
+    --swiper-navigation-size: 30px;
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        left: 80px;
+    }
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        right: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .infoPage {
+        &__button-prev,
+        &__button-next {
+            display: none;
+        }
+    }
+}

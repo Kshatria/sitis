@@ -1,0 +1,34 @@
+.gallery {
+    overflow: hidden;
+
+    &__slider {
+        width: 100vw;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__slide {
+        width: 25%;
+        height: calc(100% / 2) !important;
+        @include center;
+        flex-direction: column;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        &__slide {
+            width: 384px;
+            flex-direction: row;
+
+            img {
+                width: 50%;
+            }
+        }
+    }
+}

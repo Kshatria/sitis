@@ -1,0 +1,340 @@
+.wellknown {
+    padding: 40px 0;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+
+    &__container {
+        box-sizing: border-box;
+        max-width: 1920px;
+        padding: 0 80px;
+        margin: 0 auto;
+    }
+
+    &__title-wrap {
+        max-width: 320px;
+    }
+
+    &__title {
+        @include title48;
+        margin-bottom: 30px;
+    }
+
+    &__desc {
+        @include desc;
+        color: $grey;
+        margin-bottom: 40px;
+    }
+
+    &__row {
+        display: flex;
+        max-height: 680px;
+        overflow: hidden;
+    }
+
+    &__col {
+        width: 100%;
+
+        &:first-of-type {
+            max-width: 678px;
+
+            .wellknown__img {
+                padding: 30px 10% 12px 25%;
+            }
+        }
+
+        &:nth-of-type(2) {
+            max-width: 358px;
+
+            .wellknown__img {
+                margin-bottom: 60px;
+            }
+
+            .wellknown__item-stats {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+            .wellknown__item {
+                padding: 20px 0;
+                border-left: 2px solid $white;
+                border-right: 2px solid $white;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+
+        &:nth-of-type(3) {
+            max-width: 720px;
+
+            .wellknown__item-stats {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+            .wellknown__img {
+                @include center;
+                margin-bottom: 30px;
+            }
+
+            .wellknown__item {
+                width: 100%;
+                padding: 100px 0 30px;
+            }
+
+            p {
+                text-align: center;
+            }
+
+            .wellknown__item-title {
+                font-size: 32px;
+                line-height: 34px;
+                margin-bottom: 15px;
+            }
+
+            .wellknown__item-price {
+                font-size: 18px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: block;
+        border-bottom: 2px solid $white;
+        @include transition;
+        overflow: hidden;
+
+        &:hover,
+        &:focus {
+            background-color: transparent !important;
+            @include transition;
+        }
+    }
+
+    &__item-stats {
+        position: absolute;
+        top: 35px;
+        left: 35px;
+    }
+
+    &__category {
+        @include small;
+        color: $darkGrey;
+        margin-bottom: 10px;
+    }
+
+    &__item-title {
+        font-size: 20px;
+        line-height: 20px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    &__item-price {
+        @include desc;
+    }
+}
+
+@media (max-width: 1500px) {
+    .wellknown {
+        &__container {
+            padding: 0 25px;
+        }
+
+        &__img {
+            img {
+                width: 80%;
+            }
+        }
+
+        &__row {
+            max-height: 425px;
+        }
+
+        &__col {
+            &:first-of-type {
+                .wellknown__img {
+                    padding-left: 0;
+                    padding-right: 20px;
+
+                    img {
+                        width: 268px;
+                        display: block;
+                        margin-left: auto;
+                    }
+                }
+            }
+
+            &:nth-of-type(2) {
+                .wellknown__img {
+                    margin-bottom: 10px;
+                    img {
+                        width: 58%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &:nth-of-type(3) {
+                .wellknown__item {
+                    padding-top: 25px;
+                    padding-bottom: 20px;
+                }
+
+                .wellknown__img {
+                    margin-bottom: 10px;
+                    
+                    img {
+                        width: 437px
+                    }
+                }
+
+                .wellknown__item-title {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .wellknown {
+        &__row {
+            max-height: 342px;
+        }
+
+        &__col {
+
+            &:first-of-type {
+                .wellknown__img {
+                    padding-right: 0;
+
+                    img {
+                        width: 202px;
+                        margin-right: -75px;
+                    }
+                }
+            }
+
+            &:nth-of-type(2) {
+                .wellknown__img {
+                    img {
+                        width: 160px;
+                    }
+                }
+            }
+
+            &:nth-of-type(3) {
+
+                .wellknown__item {
+                    padding-top: 40px;
+                }
+
+                .wellknown__img {
+                    img {
+                        width: 292px;
+                    }
+                }
+            }
+        }
+
+        &__category {
+            font-size: 12px;
+            margin: 0;
+        }
+    
+        &__item-title {
+            font-size: 14px;
+            margin: 0;
+        }
+    
+        &__item-price {
+            font-size: 14px;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wellknown {
+        margin: 0;
+        
+        &__container {
+            padding: 0 20px;
+        }
+        &__title {
+            font-size: 30px;
+            line-height: 34px;
+            margin-bottom: 9px;
+        }
+
+        &__desc {
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 10px;
+        }
+
+        &__row {
+            max-height: none;
+            flex-direction: column;
+        }
+
+        &__col {
+            max-width: none!important;
+        }
+
+        &__item {
+            max-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: none!important;
+            border-bottom: 2px solid $white!important;
+            padding-left: 20px!important; 
+        }
+
+        &__item-stats {
+            position: relative;
+            top: 0;
+            left: 0;
+            order: 1;
+        }
+
+        &__img {
+            order: 2;
+            display: block!important;
+            padding: 0!important;
+            img {
+                display: block!important;
+                height: auto!important;
+                width: auto!important;
+                margin: 0!important;
+            }
+        }
+
+        &__category {
+            font-size: 12px!important;
+            margin: 0!important;
+            text-align: start!important;
+        }
+    
+        &__item-title {
+            font-size: 14px!important;
+            margin: 0!important;
+            line-height: 20px!important;
+            text-align: start!important;
+        }
+    
+        &__item-price {
+            font-size: 14px!important;
+            margin: 0!important;
+            text-align: start!important;
+        }
+    }
+}
