@@ -1,0 +1,135 @@
+.model {
+    overflow: hidden;
+    margin-bottom: 80px;
+
+    &__container {
+        max-width: 1920px;
+        margin: 0 auto;
+        padding: 0 80px;
+    }
+
+    &__slider {
+        position: relative;
+        background-color: $lightGreen;
+        overflow: hidden;
+        padding: 30px 30px 60px 160px;
+        margin-bottom: 35px;
+    }
+
+    &__slider-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__slide {
+        width: 884px;
+    }
+
+    &__pagination {
+        bottom: 30px!important;
+        left: 50%!important;
+        transform: translateX(-50%);
+    }
+
+    &__button-prev,
+    &__button-next {
+        @include transition;
+        opacity: .3!important;
+        &:hover,
+        &:focus {
+            opacity: 1!important;
+            @include transition;
+        } 
+    }
+
+    &__button-prev {
+        left: 70px!important;
+    }
+
+    &__button-next {
+        right: 70px!important;
+    }
+
+    &__desc-wrap {
+       max-width: 1050px; 
+    }
+
+    &__title {
+        @include title32;
+        margin-bottom: 15px;
+    }
+
+    &__desc {
+        @include desc;
+        color: $darkGrey;
+    }
+}
+
+@media (max-width: 1200px) {
+    .model {
+        &__container {
+            padding: 0 20px;
+        }
+
+        &__slider {
+            padding: 30px 0 60px 60px;
+        }
+
+        &__slide {
+            width: 450px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .model {
+        margin-bottom: 40px;
+
+        &__slider {
+            padding: 50px 20px 60px;
+        }
+
+        &__button-prev,
+        &__button-next {
+            top: auto!important;
+            bottom: 30px!important;
+            width: 9px!important;
+            height: 16px!important;
+
+            &::after {
+                font-size: 16px!important;
+            }
+        }
+
+        &__button-prev {
+            left: 10px!important;
+        }
+
+        &__button-next {
+            right: 10px!important;
+        }
+
+        &__slide {
+            width: 290px;
+        }
+
+        &__title {
+            font-size: 28px;
+            line-height: 30px;
+        }
+
+        &__desc {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+}

@@ -1,0 +1,126 @@
+.card {
+    position: relative;
+    display: block;
+    max-width: 360px;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+        .card__image {
+            background-color: $white!important;
+            @include transition;
+            box-shadow: $shadow;
+        }
+    }
+
+    &__favorite {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        background-color: $white;
+        @include center;
+        z-index: 20;
+        padding: none;
+        border: none;
+        border-radius: 50%;
+
+        path {
+            fill: $darkGrey!important;
+        }
+
+        &.active {
+            path {
+                fill: $red!important;
+            }
+        }
+    }
+
+    &__image {
+        width: 360px;
+        height: 360px;
+
+        @include center;
+        margin-bottom: 20px;
+        @include transition;
+    }
+
+    &__colors {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    &__color {
+        margin-right: 5px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        label {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px dotted transparent;
+            cursor: pointer;
+        }
+    }
+
+    &__title {
+        @include desc;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    &__type {
+        @include small;
+        color: $darkGrey;
+        margin-bottom: 10px;
+    }
+
+    &__price {
+        font-size: 18px;
+        line-height: 20px;
+        color: #212121;
+    }
+}
+
+@media (max-width: 1200px) {
+    .novelties,
+    .bestsellers {
+        .card {
+            &__image {
+                width: 180px;
+                height: 180px;
+    
+                img {
+                    max-width: 80%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .novelties,
+    .bestsellers {
+        .card {
+            &__favorite {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    }
+
+    .catalogList {
+        .card {
+            &__image {
+                width: 100%;
+            }
+        }
+    }
+}

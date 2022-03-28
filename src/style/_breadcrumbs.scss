@@ -1,0 +1,50 @@
+.breadcrumbs {
+    position: absolute;
+    top: 17px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
+    &__item {
+        position: relative;
+        padding: 0 20px;
+
+        @include desc14;
+        color: $white;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: 50%;
+            border-top: 2px solid $white;
+            border-right: 2px solid $white;
+            width: 5px;
+            height: 5px;
+            transform: translateY(-50%) rotate(45deg); 
+        }
+
+        &:first-of-type::before {
+            display: none;
+        }
+    }
+}
+
+.cardPage .breadcrumbs__item {
+    color: $black;
+
+    &::before {
+        border-color: $black;
+    }
+}
+
+@media (max-width: 1200px) {
+    .breadcrumbs {
+        display: none;
+    }
+}
