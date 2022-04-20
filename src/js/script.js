@@ -1,5 +1,3 @@
-/* header */
-
 if (window.innerWidth <= 1600) {
     function showMenu (trigger) {
         const menu = document.querySelector('.header__nav');
@@ -103,18 +101,14 @@ if (window.innerWidth <= 768) {
     searchTrigger.addEventListener('click', () => showSearch());
 }
 
-/* END header */
+function setStatusItemsActive () {
+    event.preventDefault();
+    this.classList.toggle('active');
+}
 
-/* card status */
-    function setStatusItemsActive () {
-        event.preventDefault();
-        this.classList.toggle('active');
-    }
-
-    const statusElements = document.querySelectorAll('[data-item="status"]');
-    if (statusElements) {
-        statusElements.forEach((el) => {
-            el.addEventListener('click', setStatusItemsActive)
-        })
-    }
-/* END card status */
+const statusElements = document.querySelectorAll('[data-item="status"]');
+if (statusElements) {
+    statusElements.forEach((el) => {
+        el.addEventListener('click', setStatusItemsActive)
+    })
+}

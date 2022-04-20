@@ -351,8 +351,14 @@
 
 @media (max-width: 768px) {
     .popup {
+        overflow-y: scroll;
+        overflow-x: hidden;
+
         &__content {
             flex-direction: column;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
         }
 
         &__image {
