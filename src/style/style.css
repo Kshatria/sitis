@@ -5076,6 +5076,9 @@ input {
   .product__button-next {
     right: 20px !important;
   }
+  .product__image {
+    overflow: hidden;
+  }
   .product__image img {
     display: block;
     width: 100%;
@@ -6261,11 +6264,19 @@ input {
 }
 
 @media (max-width: 768px) {
+  .popup {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
   .popup__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
   .popup__image {
     width: 100%;
