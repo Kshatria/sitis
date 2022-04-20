@@ -1,2 +1,2 @@
 # sitis
-Верстка проекта ситис для проекта Bike-centre.com
+Верстка проекта SITIS для проекта Bike-centre.com
